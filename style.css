@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(-45deg, #152a2c, #546f6b);
+  font-family: "Courier New", Courier, monospace;
+  color: #35211a;
+}
+
+section {
+  background: radial-gradient(#ebd5b1 1px, #fefbf3 1px);
+  background-size: 30px 30px;
+  margin: 10%;
+  padding: 50px 46px;
+  border-radius: 2px;
+  box-shadow: 1px 2px 5px #152a2c;
+}
+
+h1 {
+  color: #35211a;
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+h2 {
+  color: #8a581d;
+}
+
+.underlineH1 {
+  height: 10px;
+  margin-bottom: 55px;
+}
+
+.shading {
+  border: 1px solid rgba(138, 88, 29, 0.8);
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(138, 88, 29, 0.8) 0 5%,
+    transparent 0 25%
+  );
+  background-size: 10px 10px, 100%;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  flex-flow: column wrap;
+}
+
+.navItem {
+  margin-bottom: 30px;
+  width: fit-content;
+}
+
+a {
+  color: #35211a;
+  text-decoration: none;
+  border: 1px solid #8a581d;
+  padding: 6px 10px;
+  margin-top: 10px;
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+a:hover {
+  color: #8a581d;
+  border-bottom: 5px solid #8a581d;
+}
+
+.navItem > div {
+  height: 4px;
+  margin-top: 6px;
+  width: 100;
+}
+
+.container > p {
+  font-size: 2rem;
+  align-self: flex-end;
+}
