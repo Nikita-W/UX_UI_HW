@@ -98,9 +98,6 @@ header {
   width: 100%;
 }
 
-.navSelect {
-}
-
 .navLink a {
   padding: 10px;
   align-items: center;
@@ -172,7 +169,6 @@ section .container {
 
 .typeEffectWrapper {
   height: 4rem;
-  overflow: ;
   width: auto;
 }
 
