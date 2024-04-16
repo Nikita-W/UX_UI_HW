@@ -1,0 +1,149 @@
+/*////////////////////////////////////*/
+/*   COLOR PALETTE                    */
+/*////////////////////////////////////*/
+/* Note: I should go and add fallbacks where these are used,
+for browsers that don't support css variables */
+:root {
+  --paper-light: #fefbf3;
+  --paper-mid: #eeece1;
+  --paper-dark: #dddacf;
+  --manila-light: #fdeecc;
+  --manila-mid: #ebd5b1;
+  --manila-dark: #b69a74;
+  --Brass-light: #edd977;
+  --Brass-mid: #deba57;
+  --Brass-dark: #aa8b36;
+  --Leather-light: #ce9240;
+  --Leather-mid: #ab7328;
+  --Leather-dark: #8a581d;
+  --wood-light: #764a2f;
+  --wood-mid: #553622;
+  --wood-dark: #35211a;
+  --plant-light: #95a580;
+  --plant-mid: #577251;
+  --plant-dark: #30513d;
+  --wall-light: #546f6b;
+  --wall-mid: #364f4c;
+  --wall-dark: #152a2c;
+}
+
+/*////////////////////////////////////*/
+/*   FONTS & BASE STYLING             */
+/*////////////////////////////////////*/
+body {
+  font-family: "Courier Prime", Courier, monospace;
+  background: linear-gradient(-45deg, var(--wall-dark), var(--plant-dark));
+  height: 100vh;
+}
+
+a {
+  color: var(--Leather-dark);
+  text-decoration: none;
+}
+
+/* Set font & weight for all major headings*/
+h1,
+h2,
+h3 {
+  font-family: "Special Elite", "Courier Prime", Courier, monospace;
+  font-weight: 500;
+  color: var(--Leather-dark);
+}
+
+/* Individual header styles */
+h1 {
+  font-size: 6rem;
+}
+
+h2 {
+  font-size: 4rem;
+  color: var(--wood-dark);
+}
+
+h2.wall {
+  color: var(--paper-light);
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+/*////////////////////////////////////*/
+/*   STRUCTURAL STYLES                */
+/*////////////////////////////////////*/
+
+.flex {
+  display: flex;
+}
+
+.column {
+  flex-flow: column nowrap;
+}
+
+/*////////////////////////////////////*/
+/*   HEADER / NAVBAR                  */
+/*////////////////////////////////////*/
+.navBar {
+  position: absolute;
+  width: 100%;
+  height: 64px;
+}
+
+.navWrapper {
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 0 16px;
+}
+
+.navLink {
+  font-weight: bold;
+}
+
+/*////////////////////////////////////*/
+/*   DEFAULT SECTION STYLES           */
+/*////////////////////////////////////*/
+section {
+  padding: 210px 0;
+  overflow: hidden;
+}
+
+section .container {
+  margin: 0 16px;
+}
+
+/* screens 600px and larger */
+@media only screen and (min-width: 900px) {
+  section .container,
+  .navWrapper {
+    margin: auto;
+    width: 560px;
+  }
+}
+
+/* screens 900px and larger */
+@media only screen and (min-width: 900px) {
+  section .container,
+  .navWrapper {
+    width: 856px;
+  }
+}
+
+/* screens 1200px and larger */
+@media only screen and (min-width: 1200px) {
+  section .container,
+  .navWrapper {
+    width: 1144px;
+  }
+}
+
+/*////////////////////////////////////*/
+/*   SECTION THEMES                   */
+/*////////////////////////////////////*/
+section.paper {
+  background: radial-gradient(#ebd5b1 1px, #fefbf3 1px);
+  background-size: 32px 32px;
+  background-position: center;
+  box-shadow: 0px 8px 8px -5px var(--wall-dark);
+}
