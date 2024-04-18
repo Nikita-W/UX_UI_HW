@@ -23,20 +23,20 @@
     <!---------------------------------------->
     <header class="navBar flex">
       <div class="navWrapper flex">
-        <nav>
-          <a class="navLink" href="">
-            Work
-            <img src="" alt="" />
+        <nav class="flex">
+          <a class="navLink flex" href="">
+            <span>Works</span>
+            <img src="images/navSelect1.svg" alt="" />
           </a>
 
-          <a class="navLink" href="">
-            About
-            <img src="" alt="" />
+          <a class="navLink flex" href="">
+            <span>Contact</span>
+            <img src="images/NavSelect2.svg" alt="" />
           </a>
 
-          <a class="navLink" href="">
-            Contact
-            <img src="" alt="" />
+          <a class="navLink flex" href="">
+            <span>About</span>
+            <img src="images/NavSelect3.svg" alt="" />
           </a>
         </nav>
 
@@ -49,9 +49,48 @@
     <!---------------------------------------->
     <section id="intro" class="paper">
       <div class="container">
-        <div class="introTxtWrapper flex column">
+        <div class="introTxtWrapper">
           <h1>HI, I'M NIKITA</h1>
-          <h2>I'm&nbsp;<span class="typeEffect">a span tag</span></h2>
+          <h2>I'm&nbsp;<span id="typeEffect"></span></h2>
+        </div>
+
+        <div class="introSkillsWrapper">
+          <h3>Some of my skills:</h3>
+          <div class="skillsGrid">
+            <div class="skillItem flex order">
+              <img src="images/skill-figma.svg" alt="Figma Logo" />
+              <p>Figma</p>
+            </div>
+
+            <div class="skillItem flex">
+              <img src="images/skill-ps.svg" alt="Adobe Photoshop Logo" />
+              <p>Photoshop</p>
+            </div>
+
+            <div class="skillItem flex order">
+              <img src="images/skill-sheets.svg" alt="Google Sheets Logo" />
+              <p>Sheets</p>
+            </div>
+
+            <div class="skillItem flex">
+              <img src="images/skill-html.svg" alt="HTML Logo" />
+              <p>HTML</p>
+            </div>
+
+            <div class="skillItem flex">
+              <img src="images/skill-css.svg" alt="CSS Logo" />
+              <p>CSS</p>
+            </div>
+
+            <div class="skillItem flex">
+              <img src="images/skill-JS.svg" alt="JavaScript Logo" />
+              <p>JS</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="introImgWrapper">
+          <img src="images/introImgPlaceholder.png" alt="" />
         </div>
       </div>
     </section>
@@ -73,5 +112,8 @@
         <h2>GET IN TOUCH</h2>
       </div>
     </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="main19.js"></script>
   </body>
 </html>

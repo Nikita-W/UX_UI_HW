@@ -10,7 +10,7 @@ normalize.css file: https://github.com/necolas/normalize.css?tab=readme-ov-file
 
 ### Typewriter Effect
 
--
+- Javascript Typewriter Animation Tutorial from Tom Is Loading: https://www.youtube.com/watch?v=R846J8LJ6os
 
 ## References
 

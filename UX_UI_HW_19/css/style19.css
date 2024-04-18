@@ -33,7 +33,7 @@ for browsers that don't support css variables */
 body {
   font-family: "Courier Prime", Courier, monospace;
   background: linear-gradient(-45deg, var(--wall-dark), var(--plant-dark));
-  height: 100vh;
+  height: 100%;
 }
 
 a {
@@ -52,11 +52,11 @@ h3 {
 
 /* Individual header styles */
 h1 {
-  font-size: 6rem;
+  font-size: 3rem;
 }
 
 h2 {
-  font-size: 4rem;
+  font-size: 2rem;
   color: var(--wood-dark);
 }
 
@@ -65,7 +65,7 @@ h2.wall {
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 /*////////////////////////////////////*/
@@ -86,19 +86,34 @@ h3 {
 .navBar {
   position: absolute;
   width: 100%;
-  height: 64px;
 }
 
 .navWrapper {
-  flex-flow: row nowrap;
+  flex-flow: column-reverse nowrap;
   justify-content: space-between;
   align-items: center;
+  gap: 16px;
   width: 100%;
-  margin: 0 16px;
+  margin: 16px;
+  padding-top: 8px;
+}
+
+nav {
+  justify-content: space-around;
+  width: 100%;
 }
 
 .navLink {
   font-weight: bold;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding: 32px 16px 8px 16px;
+}
+
+.navLink img {
+  width: 100%;
+  opacity: 1;
+  display: none;
 }
 
 /*////////////////////////////////////*/
@@ -113,37 +128,157 @@ section .container {
   margin: 0 16px;
 }
 
-/* screens 600px and larger */
-@media only screen and (min-width: 900px) {
+/*////////////////////////////////////*/
+/*   SECTION THEMES                   */
+/*////////////////////////////////////*/
+section.paper {
+  background: radial-gradient(var(--Brass-mid) 1px, var(--paper-light) 1px);
+  background-size: 32px 32px;
+  background-position: top center;
+  box-shadow: 0px 4px 10px -5px rgba(0, 0, 0, 0.5),
+    0px -4px 10px -5px rgba(0, 0, 0, 0.5);
+}
+
+/*////////////////////////////////////*/
+/*   INTRO SECTION                    */
+/*////////////////////////////////////*/
+#intro .container {
+  display: grid;
+  grid: auto / auto;
+  grid-template-areas:
+    "txt"
+    "skills";
+}
+
+.introTxtWrapper {
+  grid-area: txt;
+}
+
+#typeEffect {
+  color: var(--wood-dark);
+}
+
+.introSkillsWrapper {
+  grid-area: skills;
+}
+
+.introImgWrapper {
+  display: none;
+  grid-area: img;
+  justify-content: center;
+  align-items: center;
+}
+
+.introImgWrapper img {
+  width: 100%;
+}
+
+.skillsGrid {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  /* gap: 16px; */
+}
+
+.skillItem {
+  flex-flow: column nowrap;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 16px;
+}
+
+.skillItem.order {
+  order: -1;
+}
+
+/*///////////////////////////////////////////////*/
+/* MEDIA QUERIES   ///   ///   ///   ///   ///   */
+/*///////////////////////////////////////////////*/
+/*   TABLET SM / SCREENS 600px & UP   */
+/*////////////////////////////////////*/
+@media only screen and (min-width: 600px) {
   section .container,
   .navWrapper {
     margin: auto;
     width: 560px;
   }
-}
 
-/* screens 900px and larger */
+  .navWrapper {
+    flex-flow: row nowrap;
+  }
+
+  /* Individual header styles */
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
+
+  /* INTRO SECTION */
+  #intro .container {
+    grid: 1fr 2fr / 1fr 1fr;
+    grid-template-areas:
+      "txt txt"
+      "skills img";
+  }
+
+  .introImgWrapper {
+    display: flex;
+  }
+
+  .skillItem.order {
+    order: 0;
+  }
+}
+/*////////////////////////////////////*/
+/*   TABLET LG / SCREENS 900px & UP   */
+/*////////////////////////////////////*/
 @media only screen and (min-width: 900px) {
   section .container,
   .navWrapper {
     width: 856px;
   }
+
+  #intro .container {
+    grid: 1fr 1.5fr / 2fr 1fr;
+    grid-template-areas:
+      "txt img"
+      "skills img";
+  }
 }
 
-/* screens 1200px and larger */
+/*////////////////////////////////////*/
+/*   DESKTOP / SCREENS 1200px & UP    */
+/*////////////////////////////////////*/
 @media only screen and (min-width: 1200px) {
   section .container,
   .navWrapper {
     width: 1144px;
   }
-}
 
-/*////////////////////////////////////*/
-/*   SECTION THEMES                   */
-/*////////////////////////////////////*/
-section.paper {
-  background: radial-gradient(#ebd5b1 1px, #fefbf3 1px);
-  background-size: 32px 32px;
-  background-position: center;
-  box-shadow: 0px 8px 8px -5px var(--wall-dark);
+  #intro .container {
+    grid-template-rows: 1fr 1fr;
+  }
+
+  /* Individual header styles */
+  h1 {
+    font-size: 6rem;
+  }
+
+  h2 {
+    font-size: 4rem;
+  }
+
+  h3 {
+    font-size: 2rem;
+  }
 }
+/*///////////////////////////////////////////////*/
+/* END MEDIA QUERIES     ///   ///   ///   ///   */
+/*///////////////////////////////////////////////*/
