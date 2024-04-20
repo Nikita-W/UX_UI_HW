@@ -5,12 +5,12 @@ function sleep(ms) {
 }
 
 const phrases = [
-  "a designer",
-  "a problem solver",
-  "a researcher",
-  "an organizer",
-  "an artist",
-  "a storyteller",
+  "a designer.",
+  "a problem solver.",
+  "a researcher.",
+  "an organizer.",
+  "an artist.",
+  "a storyteller.",
 ];
 const el = document.getElementById("typeEffect");
 

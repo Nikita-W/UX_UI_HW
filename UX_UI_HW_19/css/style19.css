@@ -68,6 +68,18 @@ h3 {
   font-size: 1.5rem;
 }
 
+/* .shading {
+  height: 4px;
+  border-top: 1px solid rgba(138, 88, 29, 0.8);
+  border-bottom: 1px solid rgba(138, 88, 29, 0.8);
+  background: repeating-linear-gradient(
+    135deg,
+    rgba(138, 88, 29, 0.8) 0 5%,
+    transparent 0 25%
+  );
+  background-size: 10px 10px, 100%;
+} */
+
 /*////////////////////////////////////*/
 /*   STRUCTURAL STYLES                */
 /*////////////////////////////////////*/
@@ -84,22 +96,24 @@ h3 {
 /*   HEADER / NAVBAR                  */
 /*////////////////////////////////////*/
 .navBar {
-  position: absolute;
+  position: fixed;
   width: 100%;
+  background-color: var(--paper-light);
+  z-index: 1;
+  border-bottom: 4px var(--Brass-mid) solid;
 }
 
 .navWrapper {
-  flex-flow: column-reverse nowrap;
+  flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
   gap: 16px;
-  width: 100%;
   margin: 16px;
-  padding-top: 8px;
 }
 
 nav {
-  justify-content: space-around;
+  justify-content: flex-start;
+  gap: 1vw;
   width: 100%;
 }
 
@@ -107,13 +121,19 @@ nav {
   font-weight: bold;
   flex-flow: column nowrap;
   align-items: center;
-  padding: 32px 16px 8px 16px;
+  padding: 16px 8px;
+  /* padding: 32px 16px 8px 16px; */
+  width: ;
 }
 
-.navLink img {
+/* .navLink img {
   width: 100%;
   opacity: 1;
   display: none;
+} */
+
+.logo {
+  height: 24px;
 }
 
 /*////////////////////////////////////*/
@@ -174,10 +194,8 @@ section.paper {
 }
 
 .skillsGrid {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-around;
-  /* gap: 16px; */
+  display: grid;
+  grid: 1fr 1fr / 1fr 1fr 1fr;
 }
 
 .skillItem {
@@ -187,8 +205,9 @@ section.paper {
   padding: 16px;
 }
 
-.skillItem.order {
-  order: -1;
+.skillItem img {
+  height: 20vw;
+  max-height: 120px;
 }
 
 /*///////////////////////////////////////////////*/
@@ -203,8 +222,10 @@ section.paper {
     width: 560px;
   }
 
-  .navWrapper {
-    flex-flow: row nowrap;
+  nav {
+    justify-content: space-around;
+    width: auto;
+    gap: 32px;
   }
 
   /* Individual header styles */
@@ -220,7 +241,7 @@ section.paper {
     font-size: 2rem;
   }
 
-  /* INTRO SECTION */
+  /* INTRO SECTION ////////////////////*/
   #intro .container {
     grid: 1fr 2fr / 1fr 1fr;
     grid-template-areas:
@@ -228,12 +249,16 @@ section.paper {
       "skills img";
   }
 
-  .introImgWrapper {
-    display: flex;
+  .skillsGrid {
+    grid: 1fr 1fr 1fr / 1fr 1fr;
   }
 
-  .skillItem.order {
-    order: 0;
+  .skillItem img {
+    max-height: 72px;
+  }
+
+  .introImgWrapper {
+    display: flex;
   }
 }
 /*////////////////////////////////////*/
@@ -246,10 +271,18 @@ section.paper {
   }
 
   #intro .container {
-    grid: 1fr 1.5fr / 2fr 1fr;
+    grid: 0.5fr 1fr / 2fr 1fr;
     grid-template-areas:
       "txt img"
       "skills img";
+  }
+
+  .skillsGrid {
+    grid: 1fr 1fr / 1fr 1fr 1fr;
+  }
+
+  .skillItem img {
+    max-height: 120px;
   }
 }
 
