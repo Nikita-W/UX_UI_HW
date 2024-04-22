@@ -1,8 +1,7 @@
 /*////////////////////////////////////*/
 /*   COLOR PALETTE                    */
 /*////////////////////////////////////*/
-/* Note: I should go and add fallbacks where these are used,
-for browsers that don't support css variables */
+
 :root {
   --paper-light: #fefbf3;
   --paper-mid: #eeece1;
@@ -65,20 +64,8 @@ h2.wall {
 }
 
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
-
-/* .shading {
-  height: 4px;
-  border-top: 1px solid rgba(138, 88, 29, 0.8);
-  border-bottom: 1px solid rgba(138, 88, 29, 0.8);
-  background: repeating-linear-gradient(
-    135deg,
-    rgba(138, 88, 29, 0.8) 0 5%,
-    transparent 0 25%
-  );
-  background-size: 10px 10px, 100%;
-} */
 
 /*////////////////////////////////////*/
 /*   STRUCTURAL STYLES                */
@@ -210,9 +197,76 @@ section.paper {
   max-height: 120px;
 }
 
-/*///////////////////////////////////////////////*/
-/* MEDIA QUERIES   ///   ///   ///   ///   ///   */
-/*///////////////////////////////////////////////*/
+/*////////////////////////////////////*/
+/*   WORKS SECTION                    */
+/*////////////////////////////////////*/
+.workContainer {
+  display: grid;
+  grid: 1fr / 1fr;
+  grid-template-areas: "list";
+  gap: 32px;
+}
+
+.workList hr {
+  border: 1px dashed var(--plant-mid);
+  width: 100%;
+  margin: 0;
+}
+
+/* .workItemInfo p {
+  color: var(--paper-dark);
+  font-size: 1.25rem;
+} */
+
+.workListItem {
+  display: grid;
+  grid: 1fr / 3fr 1fr;
+  grid-template-areas: "info img";
+  /* justify-content: space-between; */
+  align-items: center;
+  color: var(--paper-dark);
+  gap: 16px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.workListItem.active {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.25), transparent);
+}
+
+.workItemInfo {
+  grid-area: info;
+}
+
+.workItemInfo a {
+  color: white;
+  cursor: help;
+}
+
+.workListItem img {
+  grid-area: img;
+  width: 100%;
+  min-width: 64px;
+}
+
+.workDisplayZone {
+  display: none;
+}
+
+/* TEMP */
+.workDisplayWrapper a {
+  color: white;
+}
+
+/*///////////////////////////////////////////////////////////////////////*/
+/*                   ///   ///   ///   ///   ///   ///   ///   ///   /// */
+/*                  ///   ///   ///   ///   ///   ///   ///   ///   ///  */
+/* MEDIA QUERIES   ///   ///   ///   ///   ///   ///   ///   ///   ///   */
+/*                ///   ///   ///   ///   ///   ///   ///   ///   ///    */
+/*               ///   ///   ///   ///   ///   ///   ///   ///   ///     */
+/*///////////////////////////////////////////////////////////////////////*/
+
+/*////////////////////////////////////*/
 /*   TABLET SM / SCREENS 600px & UP   */
 /*////////////////////////////////////*/
 @media only screen and (min-width: 600px) {
@@ -260,7 +314,10 @@ section.paper {
   .introImgWrapper {
     display: flex;
   }
+
+  /* WORKS SECTION ////////////////////*/
 }
+
 /*////////////////////////////////////*/
 /*   TABLET LG / SCREENS 900px & UP   */
 /*////////////////////////////////////*/
@@ -283,6 +340,44 @@ section.paper {
 
   .skillItem img {
     max-height: 120px;
+  }
+
+  /* WORKS SECTION ////////////////////*/
+  .workContainer {
+    grid: 1fr / 1fr 2fr;
+    grid-template-areas: "list display";
+  }
+
+  .workListItem {
+    grid: 1fr / 1fr;
+    grid-template-areas: "info";
+  }
+
+  .workListItem img {
+    display: none;
+  }
+
+  .workDisplayZone {
+    display: block;
+    height: 100%;
+    width: 100%;
+  }
+
+  .workDisplayWrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.25);
+  }
+
+  .workDisplayItem {
+    display: none;
+  }
+
+  .workDisplayItem.active {
+    display: block;
   }
 }
 
