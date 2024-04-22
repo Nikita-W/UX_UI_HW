@@ -109,8 +109,6 @@ nav {
   flex-flow: column nowrap;
   align-items: center;
   padding: 16px 8px;
-  /* padding: 32px 16px 8px 16px; */
-  width: ;
 }
 
 /* .navLink img {
@@ -240,6 +238,7 @@ section.paper {
 
 .workItemInfo p {
   margin-bottom: 0;
+  font-size: 0.75rem;
 }
 
 .workListItem img {
@@ -356,10 +355,6 @@ section.paper {
     background: linear-gradient(90deg, rgba(0, 0, 0, 0.25), transparent);
   }
 
-  .workListItem:hover {
-    /* background: linear-gradient(90deg, rgba(0, 0, 0, 0.125), transparent); */
-  }
-
   .workListItem img {
     display: none;
   }
@@ -418,8 +413,13 @@ section.paper {
   .workListItem {
     padding: 32px;
   }
+
   .workItemInfo a {
     font-size: 1.5rem;
+  }
+
+  .workItemInfo p {
+    font-size: 1rem;
   }
 }
 /*///////////////////////////////////////////////*/
